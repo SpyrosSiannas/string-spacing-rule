@@ -33,3 +33,44 @@ function displayResults(results){
         resultsContainer.appendChild(newPar);
     }
 }
+
+/**
+ * Method that takes as input the id of the changed container and the 
+ * unit system it converted into and applies the necessary UI toggling 
+ * behaviour
+ * 
+ * @param {String} inputContainerID 
+ * @param {String} unitSystem 
+ */
+function inputUnitChanged(inputContainerID, unitSystem){
+    var inputContainer = document.getElementById(inputContainerID);
+    const numChildren = inputContainer.childElementCount;
+    if (unitSystem == "in"){
+        for (let iChild=0; iChild < numChildren; iChild++){
+            let thisChild = inputContainer.children[iChild];
+            if (thisChild.nodeName == "INPUT"){
+                thisChild.value = "";
+                thisChild.placeholder = "";
+                const newText = document.createTextNode(" / ");
+                let newInput = document.createElement("input");
+                newInput.type = "number";
+                newInput.min = "0";
+                inputContainer.insertBefore(newText, thisChild.nextSibling);
+                inputContainer.insertBefore(newInput, thisChild.nextSibling.nextSibling);
+                break;
+            }
+        }
+    }
+    else if (unitSystem == "mm"){
+        for (let iChild=0; iChild < numChildren; iChild++){
+            let thisChild = inputContainer.children[iChild];
+            if (thisChild.nodeName == "INPUT"){
+                let inchSeparator = thisChild.nextSibling;
+                let inchDenominator = inchSeparator.nextSibling;
+                inputContainer.removeChild(inchSeparator);
+                inputContainer.removeChild(inchDenominator);
+                break;
+            }
+        }
+    }
+}
