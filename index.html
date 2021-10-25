@@ -16,11 +16,26 @@
     <div id="main-component">
         <fieldset>
             <legend>Input</legend>
-            <p>Nut Width: <input type="number" id="nut-width" min="0" placeholder="41.275" step="0.001"></p>
-            <p>Bass String Clearance: <input type="number" id="bass-clearance" min="0" placeholder="3.175" step="0.001"></p>
-            <p>Treble String Clearance: <input type="number" id="treble-clearance" min="0" placeholder="3.175" step="0.001"></p>
-            <p>No. of Strings: <input type="number" id="string-number" min="3" placeholder="6"></p>
-            <p>Adding Factor: <input type="number" id="adding-factor" min="0.01" max ="1.00" placeholder="0.11" step="0.001"></p>
+            <div class="input-container">
+                <label for="nut-width">Nut Width: </label>
+                <input type="number" id="nut-width" min="0" placeholder="41.275" step="0.001">
+            </div>
+            <div class="input-container">
+                <label for="bass-clearance">Bass String Clearance: </label> 
+                <input type="number" id="bass-clearance" min="0" placeholder="3.175" step="0.001">
+            </div>
+            <div class="input-container">
+                <label>String Clearance: </label> 
+                <input type="number" id="treble-clearance" min="0" placeholder="3.175" step="0.001">
+            </div>
+            <div class="input-container">
+                <label for="string-number">No. of Strings: </label>
+                <input type="number" id="string-number" min="3" placeholder="6">
+            </div>
+            <div class="input-container">
+                <label for="adding-factor">Adding Factor: </label> 
+                <input type="number" id="adding-factor" min="0.01" max ="1.00" placeholder="0.11" step="0.001">
+            </div>
             <button onclick="calculateSpacing()">Calculate!</button>
         </fieldset>
         <fieldset>
