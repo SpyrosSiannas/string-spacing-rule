@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,11 +16,11 @@
     <div id="main-component">
         <fieldset>
             <legend>Input</legend>
-            <p>Nut Width: <input type="number" id="nut-width" min="0" placeholder="0.0" step="0.01"></p>
-            <p>Bass String Clearance: <input type="number" id="bass-clearance" min="0" placeholder="0.0" step="0.01"></p>
-            <p>Treble String Clearance: <input type="number" id="treble-clearance" min="0" placeholder="0.0" step="0.01"></p>
+            <p>Nut Width: <input type="number" id="nut-width" min="0" placeholder="41.275" step="0.001"></p>
+            <p>Bass String Clearance: <input type="number" id="bass-clearance" min="0" placeholder="3.175" step="0.001"></p>
+            <p>Treble String Clearance: <input type="number" id="treble-clearance" min="0" placeholder="3.175" step="0.001"></p>
             <p>No. of Strings: <input type="number" id="string-number" min="3" placeholder="6"></p>
-            <p>Adding Factor: <input type="number" id="adding-factor" min="0.01" placeholder="0.11" step="0.01"></p>
+            <p>Adding Factor: <input type="number" id="adding-factor" min="0.01" max ="1.00" placeholder="0.11" step="0.001"></p>
             <button onclick="calculateSpacing()">Calculate!</button>
         </fieldset>
         <fieldset>

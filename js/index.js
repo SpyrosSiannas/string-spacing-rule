@@ -24,8 +24,9 @@ function displayResults(results){
     console.log(results);
     const subdivisions = results.length;
     const resultsContainer = document.getElementById("results-container");
-    const containerWidth = resultsContainer.clientWidth;
-    const subdivisionWidth = containerWidth / subdivisions;
+
+    // Empty the container
+    resultsContainer.innerHTML = '';
 
     for (let subdivisionIndex = 0; subdivisionIndex < subdivisions; subdivisionIndex++){
         const newPar = document.createElement("p");
