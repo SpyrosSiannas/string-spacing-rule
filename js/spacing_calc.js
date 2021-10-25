@@ -91,7 +91,6 @@ class SpacingCalculator {
         if (check == this.remainingLength){
             for (let i = 0; i < endingPoint; i++){
                 let thisRes = this.round(this.stringSpacingSet[index+i], 3);
-                console.log(i+1, i+2, thisRes);
                 this.result.push(thisRes);
             }
         }
