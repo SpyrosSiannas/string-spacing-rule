@@ -13,6 +13,21 @@
             String Spacing Rule Calculator
         </h1>
     </div>
+    <div id="main-component">
+        <fieldset>
+            <legend>Input</legend>
+            <p>Nut Width: <input type="number" id="nut-width" min="0" placeholder="0.0" step="0.01"></p>
+            <p>Bass String Clearance: <input type="number" id="bass-clearance" min="0" placeholder="0.0" step="0.01"></p>
+            <p>Treble String Clearance: <input type="number" id="treble-clearance" min="0" placeholder="0.0" step="0.01"></p>
+            <p>No. of Strings: <input type="number" id="string-number" min="3" placeholder="6"></p>
+            <p>Adding Factor: <input type="number" id="adding-factor" min="0.01" placeholder="0.11" step="0.01"></p>
+            <button onclick="calculateSpacing()">Calculate!</button>
+        </fieldset>
+        <fieldset>
+            <legend>Results</legend>
+            <div id="results-container"></div>
+        </fieldset>
+    </div>
 </body>
 <script src="js/spacing_calc.js"></script>
 <script src="js/index.js"></script>
