@@ -10,7 +10,6 @@ function calculateSpacing(){
 
     let calculator = new SpacingCalculator(nutWidth, bassClearance, trebleClearance, stringNumber, addingFactor);
     calculator.calculateOptimalSet();
-    console.log(calculator)
     displayResults(calculator.getResult());
 }
 
@@ -21,7 +20,6 @@ function calculateSpacing(){
  * @param {Array} results 
  */
 function displayResults(results){
-    console.log(results);
     const subdivisions = results.length;
     const resultsContainer = document.getElementById("results-container");
 
