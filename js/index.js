@@ -13,6 +13,17 @@ function calculateSpacing(){
     displayResults(calculator.getResult());
 }
 
+function inchToMm(nom,denom){
+    var fraction = nom/denom
+    fraction = round(fraction,3)
+    let output = fraction * 25.4
+}
+
+function mmToInch(input){
+    var fraction = input / 25.4
+    fraction = round(fraction,3)
+}
+
 /**
  * Method that gets the results array from the calculator object
  * and displays it in the UI
