@@ -111,4 +111,24 @@ class SpacingCalculator {
     getResult(){
         return this.result;
     }
+
+    /**
+     * A method that converts a number from milimeters to inches
+     * @param {Number} inputInMilimeters 
+     * @returns The result in inches
+     */
+    milimeterToInch(inputInMilimeters){
+        return this.round(inputInMilimeters / 25.4, 3);
+    } 
+
+    /**
+     * A method that converts a nimber from inches (fraction or singular input) to milimiters
+     * @param {Number} nominator The inch nominator
+     * @param {Number} denominator (optional) Inch denominator, default = 1
+     * @returns the result in milimeters
+     */
+    inchToMilimeter(nominator, denominator = 1){
+        let result = nominator / denominator;
+        return this.round(result*25.4, 3);
+    }
 }
