@@ -34,7 +34,7 @@ class SpacingCalculator {
                         },
                 resultsUnit = "mm")
     {
-        // Pass everything to member functions
+        // Pass everything to member fields
         this.stringNumber = stringNumber;
         this.addingFactor = addingFactor;
         this.units = units;
@@ -169,7 +169,7 @@ class SpacingCalculator {
     } 
 
     /**
-     * A method that converts a nimber from inches (fraction or singular input) to milimiters
+     * A method that converts a number from inches (fraction or singular input) to milimiters
      * @param {Number} nominator The inch nominator
      * @param {Number} denominator (optional) Inch denominator, default = 1
      * @returns the result in milimeters
