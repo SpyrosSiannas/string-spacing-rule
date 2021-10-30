@@ -9,12 +9,21 @@
  */
 
 class SpacingCalculator {
-    constructor(nutLength, bassStringClearance, trebleStringClearance, stringNumber, addingFactor){
+    constructor(nutLength, bassStringClearance, trebleStringClearance, stringNumber, addingFactor, units){
+        // Pass everything to member functions
         this.stringNumber = stringNumber;
         this.addingFactor = addingFactor;
+        this.units = units;
+        this.nutLength = nutLength;
+        this.bassClearance = bassStringClearance;
+        this.trebleClearance = trebleStringClearance;
+
+        this.setUnits();
+
+        // Basic setup
         this.stringSpacingSet = [0];
         this.result = [];
-        this.remainingLength = nutLength - bassStringClearance - trebleStringClearance;
+        this.remainingLength = this.nutLength - this.bassClearance - this.trebleClearance;
         this.remainingLength = this.round(this.remainingLength, 3);
 
         this.initializeMarkers();
@@ -94,6 +103,16 @@ class SpacingCalculator {
                 this.result.push(thisRes);
             }
         }
+    }
+
+    /**
+     * Method that converts all the values of the calculator to mm 
+     */
+    setUnits(){
+        if (this.units["nut-width"] == "in") this.nutLength = this.inchToMilimeter(this.nutLength);
+        if (this.units["bass-clearance"] == "in") this.bassClearance = this.inchToMilimeter(this.bassClearance);
+        if (this.units["treble-clearance"] == "in") this.trebleClearance = this.inchToMilimeter(this.trebleClearance);
+        if (this.units["adding-factor"] == "in") this.addingFactor = this.inchToMilimeter(this.addingFactor);
     }
 
     /**

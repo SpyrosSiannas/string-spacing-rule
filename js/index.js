@@ -2,15 +2,59 @@
  * Method that passes the user's input to the calculator instance
  */
 function calculateSpacing(){
-    const nutWidth = document.getElementById("nut-width").value;
-    const bassClearance = document.getElementById("bass-clearance").value;
-    const trebleClearance = document.getElementById("treble-clearance").value;
-    const stringNumber = document.getElementById("string-number").value;
-    const addingFactor = document.getElementById("adding-factor").value;
-
-    let calculator = new SpacingCalculator(nutWidth, bassClearance, trebleClearance, stringNumber, addingFactor);
+    let preparedValues = prepareValues();
+    let calculator = new SpacingCalculator(preparedValues["nut-width"], 
+                                           preparedValues["bass-clearance"],
+                                           preparedValues["treble-clearance"],
+                                           preparedValues["string-number"],
+                                           preparedValues["adding-factor"], 
+                                           preparedValues.units);
     calculator.calculateOptimalSet();
     displayResults(calculator.getResult());
+}
+
+function prepareValues(){
+    // Values that require unit checking
+    const inputContainers = ["nut-width-container", "bass-clearance-container", "treble-clearance-container", "adding-factor-container"];
+
+    let preparedValues = {
+        "nut-width" : 0,
+        "bass-clearance" : 0,
+        "treble-clearance" : 0,
+        "string-number" : 0,
+        "adding-factor" : 0,
+        units : {}
+    };
+
+    for (containerId of inputContainers){
+        // Get the input ID
+        const inputID = containerId.split("-container", 1)[0];
+        const unitID = inputID + "-unit";
+        const containerUnit = document.getElementById(unitID).value;
+
+        const primaryInput = document.getElementById(inputID);
+
+        let result = 0;
+        if (containerUnit == "in"){
+            let nominator = primaryInput.value;
+            // Skip the "/" character and get the denominator
+            let denominator = primaryInput.nextSibling.nextSibling.value;
+            result = nominator / denominator;
+        } 
+        else {
+            result = primaryInput.value;
+        }
+
+        preparedValues[inputID] = Number(result);
+        preparedValues.units[inputID] = containerUnit;
+    }
+
+
+    // stringNumber is a natural number
+    const stringNumber = document.getElementById("string-number").value;
+    preparedValues["string-number"] = Number(stringNumber);
+
+    return preparedValues;
 }
 
 /**
