@@ -13,6 +13,11 @@ function calculateSpacing(){
     displayResults(calculator.getResult());
 }
 
+/**
+ * A method that gets all the necesary values from the UI and prepares them
+ * for calculations
+ * @returns An object with the processed values 
+ */
 function prepareValues(){
     // Values that require unit checking
     const inputContainers = ["nut-width-container", "bass-clearance-container", "treble-clearance-container", "adding-factor-container"];
