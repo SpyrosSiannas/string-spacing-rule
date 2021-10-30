@@ -4,13 +4,13 @@
  * Step 2: Iterate over all sets to find which one fits our specifications
  * Step 3: If there is remaining space, split it evenly between strings
  * 
- * Authors: Spyros S., Alexis D.
- * 
+ * @author Spyros S.
+ * @author Alexis D.
  */
 
 class SpacingCalculator {
     /**
-     * Constructor of the calculator class. The
+     * Constructor of the calculator class.
      * @param {Number} nutLength The width of the instrument's nut
      * @param {Number} bassStringClearance The empty space between the instrument's bass string 
      *                                     and the edge of the fretboard
