@@ -54,7 +54,6 @@ function prepareValues(){
         preparedValues.units[inputID] = containerUnit;
     }
 
-
     // stringNumber is a natural number
     const stringNumber = document.getElementById("string-number").value;
     preparedValues["string-number"] = Number(stringNumber);

@@ -9,7 +9,29 @@
  */
 
 class SpacingCalculator {
-    constructor(nutLength, bassStringClearance, trebleStringClearance, stringNumber, addingFactor, units){
+    /**
+     * Constructor of the calculator class. The
+     * @param {Number} nutLength The width of the instrument's nut
+     * @param {Number} bassStringClearance The empty space between the instrument's bass string 
+     *                                     and the edge of the fretboard
+     * @param {Number} trebleStringClearance The empty space between the instrument's treble string 
+     *                                       and the edge of the fretboard
+     * @param {Number} stringNumber The instrument's number of strings
+     * @param {Number} addingFactor The increment factor for the ruler's markers
+     * @param {Object} units (optional) An object with the units the input values were measured in. Default is mm
+     */
+    constructor(nutLength, 
+                bassStringClearance,
+                trebleStringClearance, 
+                stringNumber, 
+                addingFactor, 
+                units = {
+                            "nut-width" : "mm",
+                            "bass-clearance" : "mm",
+                            "treble-clearance" : "mm",
+                            "adding-factor" : "mm"
+                        })
+    {
         // Pass everything to member functions
         this.stringNumber = stringNumber;
         this.addingFactor = addingFactor;
