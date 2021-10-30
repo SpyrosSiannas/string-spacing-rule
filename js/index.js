@@ -3,12 +3,13 @@
  */
 function calculateSpacing(){
     let preparedValues = prepareValues();
-    let calculator = new SpacingCalculator(preparedValues["nut-width"], 
+    calculator = new SpacingCalculator(preparedValues["nut-width"], 
                                            preparedValues["bass-clearance"],
                                            preparedValues["treble-clearance"],
                                            preparedValues["string-number"],
                                            preparedValues["adding-factor"], 
-                                           preparedValues.units);
+                                           preparedValues.units,
+                                           preparedValues.resultsUnit);
     calculator.calculateOptimalSet();
     displayResults(calculator.getResult());
 }
@@ -58,6 +59,8 @@ function prepareValues(){
     const stringNumber = document.getElementById("string-number").value;
     preparedValues["string-number"] = Number(stringNumber);
 
+    const resultsUnit = document.getElementById("results-unit").value;
+    preparedValues.resultsUnit = resultsUnit;
     return preparedValues;
 }
 
@@ -70,13 +73,20 @@ function prepareValues(){
 function displayResults(results){
     const subdivisions = results.length;
     const resultsContainer = document.getElementById("results-container");
+    const resultsUnit = document.getElementById("results-unit").value;
 
     // Empty the container
     resultsContainer.innerHTML = '';
 
     for (let subdivisionIndex = 0; subdivisionIndex < subdivisions; subdivisionIndex++){
         const newPar = document.createElement("p");
-        const divTextContent = document.createTextNode("Space between strings " + String(subdivisionIndex + 1) + " and " + String(subdivisionIndex + 2) + ": " + results[subdivisionIndex]);
+        const divTextContent = document.createTextNode("Space between strings " + 
+                                                       String(subdivisionIndex + 1) + 
+                                                       " and " + String(subdivisionIndex + 2) + 
+                                                       ": " + 
+                                                       results[subdivisionIndex] +
+                                                       " "+
+                                                       resultsUnit);
         newPar.appendChild(divTextContent);
         resultsContainer.appendChild(newPar);
     }

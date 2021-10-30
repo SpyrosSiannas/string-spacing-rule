@@ -19,6 +19,7 @@ class SpacingCalculator {
      * @param {Number} stringNumber The instrument's number of strings
      * @param {Number} addingFactor The increment factor for the ruler's markers
      * @param {Object} units (optional) An object with the units the input values were measured in. Default is mm
+     * @param {String} resultsUnit (optional) The measurment unit of the result. Default is mm
      */
     constructor(nutLength, 
                 bassStringClearance,
@@ -30,7 +31,8 @@ class SpacingCalculator {
                             "bass-clearance" : "mm",
                             "treble-clearance" : "mm",
                             "adding-factor" : "mm"
-                        })
+                        },
+                resultsUnit = "mm")
     {
         // Pass everything to member functions
         this.stringNumber = stringNumber;
@@ -39,6 +41,7 @@ class SpacingCalculator {
         this.nutLength = nutLength;
         this.bassClearance = bassStringClearance;
         this.trebleClearance = trebleStringClearance;
+        this.resultsUnit = resultsUnit;
 
         this.setUnits();
 
@@ -150,6 +153,9 @@ class SpacingCalculator {
      * @returns Result array
      */
     getResult(){
+        if (this.resultsUnit == "in"){
+            this.convertResult("in");
+        }
         return this.result;
     }
 
@@ -171,5 +177,12 @@ class SpacingCalculator {
     inchToMilimeter(nominator, denominator = 1){
         let result = nominator / denominator;
         return this.round(result*25.4, 3);
+    }
+
+    convertResult(targetUnit){
+        for (let resultIndex = 0; resultIndex < this.result.length; resultIndex++){
+            if (targetUnit == "in") this.result[resultIndex] = this.milimeterToInch(this.result[resultIndex]);
+            else this.result[resultIndex] = this.inchToMilimeter(this.result[resultIndex]);
+        }
     }
 }
