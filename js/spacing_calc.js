@@ -179,6 +179,10 @@ class SpacingCalculator {
         return this.round(result*25.4, 3);
     }
 
+    /**
+     * Method that converts the results to another measurment unit
+     * @param {String} targetUnit The unit to convert the results to
+     */
     convertResult(targetUnit){
         for (let resultIndex = 0; resultIndex < this.result.length; resultIndex++){
             if (targetUnit == "in") this.result[resultIndex] = this.milimeterToInch(this.result[resultIndex]);
