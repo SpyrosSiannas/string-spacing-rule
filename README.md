@@ -5,7 +5,7 @@ It is a software version of the string spacing rule like the ones sold from a bu
 
 If you want to read more about the tool, you can read the excellent explanation in [Frets](http://www.frets.com/FretsPages/Luthier/Tools/NutRule/nutrule.html) and in [StewMac](https://www.stewmac.com/video-and-ideas/online-resources/learn-about-guitar-nut-and-saddle-setup-and-repair/string-spacing-rule-instructions/) 
 
-Also, there is a great [video](https://www.youtube.com/watch?v=w_a8S9TsG6g)by the master himself Dan Erlewine, showing how to use the tool
+Also, there is a great [video](https://www.youtube.com/watch?v=w_a8S9TsG6g) by the master himself Dan Erlewine, showing how to use the tool
 
 If you make a couple of nuts using this tool, please consider making a donation
 
