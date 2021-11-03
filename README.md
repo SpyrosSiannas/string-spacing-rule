@@ -9,6 +9,4 @@ Also, there is a great [video](https://www.youtube.com/watch?v=w_a8S9TsG6g) by t
 
 You will also need an actual ruler or calipers to transfer the results onto the nut
 
-If you make a couple of nuts using this tool, please consider making a donation
-
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate?hosted_button_id=VBJ3FK2AARHYW)
+If you make a couple of nuts using this tool, please consider making a [donation](https://www.paypal.com/donate?hosted_button_id=VBJ3FK2AARHYW)
