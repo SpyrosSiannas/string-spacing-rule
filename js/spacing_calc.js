@@ -103,7 +103,7 @@ class SpacingCalculator {
                 optimalLength = thisLength;
             }
 
-            if ((thisLength > this.remainingLength)){
+            if ((thisLength >= this.remainingLength)){
                 break;
             }
         }
